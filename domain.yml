@@ -1,0 +1,215 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - help_induction
+  - previous_step
+  - skip
+  - inprogress
+  - completed
+  - start_tools
+  - faq
+
+actions:
+  - validate_tools_form
+  - action_ask_tools_form_CitrixDoors
+  - action_ask_tools_form_GIT
+  - action_ask_tools_form_ScreenPresso
+  - action_select_main_steps
+  - action_are_you_sure_skip
+  - action_skip_current_slot
+
+forms:
+  tools_form:
+    required_slots:
+      - CitrixDoors
+      - GIT
+      - ScreenPresso
+      - VSCode
+      - Toolbase
+      - Wireshark
+      - RTB
+
+responses:
+  utter_greet:
+  - text: "Hello and welcome! I'm ACPDevs ChatBot, here to assist with your induction process and answer any questions or concerns. How may I assist you today?"
+    buttons:
+    - title: "Induction Process"
+      payload: "/help_induction"
+    - title: "Q&A"
+      payload: "/help_induction"
+  utter_goodbye:
+  - text: "If you ever have more questions, don't hesitate to reach out."
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_link:
+  - text: "Please click this [link](https://www.google.com/%29)."
+  utter_help_induction:
+  - text: "As a new meber of ACP Development Team you have to go trhough an inductive plan designed to present you leveling knowledge material.
+          \nThe main stages of Induction Process are:
+          \n\n🔧 Basic Tools Installation\n\n📚 Basic Induction Topics\n\n🎓 Advanced Induction Topics
+          \n\n¿Would you like to begin with the process?"
+  
+  #Q&A responses
+  utter_faq/ask_name:
+  - text: Hello, my name is DevsChat Bot.
+
+  utter_faq/ask_weather:
+  - text: Oh, it does look sunny right now in Berlin.
+  
+
+slots:
+#  current_step:
+#    type: text
+#    mappings:
+#    - type: custom
+
+  CitrixDoors:
+    type: categorical
+    values:
+      - hold
+      - progress
+      - done
+    mappings:
+    - type: from_intent 
+      value: progress
+      intent: inprogress
+      conditions:
+      - active_loop: tools_form
+        requested_slot: CitrixDoors
+    - type: from_intent 
+      value: done
+      intent: completed
+      conditions:
+      - active_loop: tools_form
+        requested_slot: CitrixDoors
+
+  GIT:
+    type: categorical
+    values:
+      - hold
+      - progress
+      - done
+    mappings:
+    - type: from_intent 
+      value: progress
+      intent: inprogress
+      conditions:
+      - active_loop: tools_form
+        requested_slot: GIT
+    - type: from_intent 
+      value: done
+      intent: completed
+      conditions:
+      - active_loop: tools_form
+        requested_slot: GIT
+  
+  ScreenPresso:
+    type: categorical
+    values:
+      - hold
+      - progress
+      - done
+    mappings:
+    - type: from_intent 
+      value: progress
+      intent: inprogress
+      conditions:
+      - active_loop: tools_form
+        requested_slot: ScreenPresso
+    - type: from_intent 
+      value: done
+      intent: completed
+      conditions:
+      - active_loop: tools_form
+        requested_slot: ScreenPresso
+  
+  VSCode:
+    type: categorical
+    values:
+      - hold
+      - progress
+      - done
+    mappings:
+    - type: from_intent 
+      value: progress
+      intent: inprogress
+      conditions:
+      - active_loop: tools_form
+        requested_slot: VSCode
+    - type: from_intent 
+      value: done
+      intent: completed
+      conditions:
+      - active_loop: tools_form
+        requested_slot: VSCode
+  
+  Toolbase:
+    type: categorical
+    values:
+      - hold
+      - progress
+      - done
+    mappings:
+    - type: from_intent 
+      value: progress
+      intent: inprogress
+      conditions:
+      - active_loop: tools_form
+        requested_slot: Toolbase
+    - type: from_intent 
+      value: done
+      intent: completed
+      conditions:
+      - active_loop: tools_form
+        requested_slot: Toolbase
+  
+  Wireshark:
+    type: categorical
+    values:
+      - hold
+      - progress
+      - done
+    mappings:
+    - type: from_intent 
+      value: progress
+      intent: inprogress
+      conditions:
+      - active_loop: tools_form
+        requested_slot: Wireshark
+    - type: from_intent 
+      value: done
+      intent: completed
+      conditions:
+      - active_loop: tools_form
+        requested_slot: Wireshark
+  
+  RTB:
+    type: categorical
+    values:
+      - hold
+      - progress
+      - done
+    mappings:
+    - type: from_intent 
+      value: progress
+      intent: inprogress
+      conditions:
+      - active_loop: tools_form
+        requested_slot: RTB
+    - type: from_intent 
+      value: done
+      intent: completed
+      conditions:
+      - active_loop: tools_form
+        requested_slot: RTB
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

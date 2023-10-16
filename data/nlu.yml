@@ -1,0 +1,173 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - sup 
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes please
+    - kinda
+    - kind of
+    - sure
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no thanks
+    - please no
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: help_induction
+  examples: |
+    - Can you provide guidance on the onboarding process?
+    - I'm new here. How do I get started with onboarding?
+    - I need assistance with my induction. Where can I find information?
+    - What steps do I need to follow for my onboarding?
+    - How can I get help with the induction program?
+    - Is there a guide for newcomers to understand the onboarding process?
+    - Could you explain what's involved in the induction?
+    - I'm a new employee. Can you help me navigate the onboarding?
+    - I'm feeling a bit lost about the induction. Can you assist me?
+    - What's the procedure for new hires during onboarding?
+    - I have questions about the induction. Can someone provide assistance?
+    - I'm not sure where to begin with my induction. Any guidance?
+    - I need help understanding the steps in the induction.
+    - Can you point me in the right direction for onboarding information?
+    - I'd appreciate some assistance with my orientation. Where do I start?
+
+- intent: previous_step
+  examples: |
+    - previous_step
+    - Can we go back?
+    - I'd like to revisit a previous topic
+    - Let's go back to the last step.
+    - I need to revisit a previous stage.
+    - Can we go over that again?
+    - i need to go back to previous step
+    
+- intent: skip
+  examples: |
+    - I'll do it later
+    - I didn't bother with it
+    - Skip that one
+    - Skip this step please
+    - Please not this one
+    - I don't want to do it
+    - I'll get to it some other time
+    - Can we postpone this step?
+    - Let's skip over this for now
+    - I chose to pass on that task
+
+- intent: inprogress
+  examples: | 
+    - I've begun, but it's not done
+    - I will finish later
+    - I'm almost done
+    - I didn't finish 
+    - i'll tackle it later
+    - let's leave this step here for now
+    - i work on this tomorrow
+
+- intent: completed
+  examples: |
+    - Finished
+    - Done
+    - Completed
+    - Im ready for the next one
+    - we can continue
+    - All done
+    - I've handled it
+    - step completed
+    - I finished this step
+
+- intent: faq/ask_name
+  examples: |
+    - What is your name?
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for yourself?
+- intent: faq/ask_weather
+  examples: |
+    - What's the weather like today?
+    - Does it look sunny outside today?
+    - Oh, do you mind checking the weather for me please?
+    - I like sunny days in Berlin.

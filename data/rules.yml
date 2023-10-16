@@ -1,0 +1,58 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Ask sure to skip a step
+  condition:
+  - active_loop: tools_form
+  steps:
+  - intent: skip
+  - action: action_are_you_sure_skip
+
+- rule: Affirm to skip
+  condition:
+  - active_loop: tools_form
+  steps:
+  - action: action_are_you_sure_skip
+  - intent: affirm
+  - action: action_skip_current_slot
+  - action: tools_form
+  - active_loop: tools_form
+
+- rule: Deny to skip
+  condition:
+  - active_loop: tools_form
+  steps:
+  - action: action_are_you_sure_skip
+  - intent: deny
+  - action: tools_form
+  - active_loop: tools_form
+
+- rule: Handle FAQ
+  steps:
+  - intent: faq
+  - action: utter_faq
+
+- rule: Handle FAQ in Form
+  condition:
+  - active_loop: tools_form
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - action: tools_form
+  - active_loop: tools_form
+
+
+
+
+  
