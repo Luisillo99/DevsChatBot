@@ -13,7 +13,6 @@ intents:
   - skip
   - inprogress
   - completed
-  - start_tools
   - faq
 
 actions:
@@ -21,7 +20,6 @@ actions:
   - action_ask_tools_form_CitrixDoors
   - action_ask_tools_form_GIT
   - action_ask_tools_form_ScreenPresso
-  - action_select_main_steps
   - action_are_you_sure_skip
   - action_skip_current_slot
 
@@ -48,8 +46,6 @@ responses:
   - text: "If you ever have more questions, don't hesitate to reach out."
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
-  utter_link:
-  - text: "Please click this [link](https://www.google.com/%29)."
   utter_help_induction:
   - text: "As a new meber of ACP Development Team you have to go trhough an inductive plan designed to present you leveling knowledge material.
           \nThe main stages of Induction Process are:
@@ -59,7 +55,6 @@ responses:
   #Q&A responses
   utter_faq/ask_name:
   - text: Hello, my name is DevsChat Bot.
-
   utter_faq/ask_weather:
   - text: Oh, it does look sunny right now in Berlin.
   

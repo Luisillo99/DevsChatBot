@@ -1,0 +1,21 @@
+CitrixDoors:
+  text: "This is the response for [slot1]"
+  link: "https://example.com/slot1"
+GIT:
+  text: "This is the [link] for slot2"
+  link: "https://example.com/slot2"
+ScreenPresso:
+  text: "[This] is the response for slot3"
+  link: "https://example.com/slot3"
+VSCode:
+  text: "This is the response for [slot4]"
+  link: "https://example.com/slot4"
+Toolbase:
+  text: "This is the response for [slot5]"
+  link: "https://example.com/slot5"
+Wireshark:
+  text: "This is the response for [slot6]"
+  link: "https://example.com/slot6"
+RTB:
+  text: "This is the response for [slot7]"
+  link: "https://example.com/slot7"

@@ -8,8 +8,6 @@ stories:
   - intent: help_induction
   - action: utter_help_induction
   - intent: affirm
-  - action: action_select_main_steps
-  - intent: start_tools
   - action: tools_form
   - active_loop: tools_form
 
